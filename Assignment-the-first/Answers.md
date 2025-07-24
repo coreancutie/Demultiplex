@@ -40,50 +40,55 @@
 
    `while true` loop
 
-   read line for each of the 4 files at once
+   read 4 lines at a time for each of the 4 files at once
 
-   `if` all four lines are false (empty newline) then break the loop
+   `if` all four lines are false (empty newline) `not l1 and not l1 ....` then break the loop
 
    *the rest of this code will run if the lines are not empty and we are still in the loop*
 
    strip the line (to get rid of new line at the end)
 
-   then get the barcode for `file 2` and `file 3` (the index files)
+   get the header by checking it is line number 1 using `%` and assigning it to a variable 
 
-   check the quality score of the barcodes by calling the phred_score function that I will make/call from bioinfo.py
+   get the barcodes by checking it is line number 2 using `%` for `file 2` and `file 3` (the index files) and assign them to variables
    
-    `if` the barcodes are below the quality score `<` (regardless of if they are hopped, matched, or not)
+   `barcode1 = __`
    
-     combine the barcodes into one string
+   `barcode2 = __`
 
-     append that to the end of each header
+   check the quality score of the barcodes from line 4 using `%` and calling the phred_score function that I will make/call from bioinfo.py and storing them into variables
 
-     output it into a file `using with open('a')` named `undetermined_read1.fastq` and `undetermined_read2.fastq`
+   `bar1qs = phred_score()`
+   
+   `bar2qs = phred_score()`
+   
+   combine the barcodes into one string
+   
+   `barcode = barcode2 + '-' + barcode3`
+   
+   append the combined barcode to the end of each header
+
+   `bar1head = l1 + barcode`
+   
+   `bar2head = l4 + barcode`
+   
+    `if` the `bar1qs` `or` `bar2qs` are below the quality score `<` `threshold` (regardless of if they are hopped, matched, or not)
+
+     output the entire record into a file `using with open('a')` named `undetermined_read1.fastq` and `undetermined_read2.fastq`
 
    *this code will run if the barcodes are not below the quality score threshold*
    
    - `if` the barcodes are the same as each other `==` `and` part of the 24 barcodes
 
-     combine the barcodes into one string
-
-     append that to the end of each header
-
-     output it into a file `using with open('a')` named `barcode<x>_read1.fastq` and `barcode<x>_read2.fastq` where <x> is the number of the barcode
+     output the entire record into a file `using with open('a')` named `barcode<x>_read1.fastq` and `barcode<x>_read2.fastq` where <x> is the number of the barcode
      
    - `if` the barcodes are different `=!` `and` part of the 24 barcodes
 
-     combine the barcodes into one string
-
-     append that to the end of each header
-
-     output it into a file `using with open('a')` named `hopped_read1.fastq` and `hopped_read2.fastq`
+     output the entire record into a file `using with open('a')` named `hopped_read1.fastq` and `hopped_read2.fastq`
      
    - `if` the barcodes are not part of the 24 barcodes
-     combine the barcodes into one string
-
-     append that to the end of each header
-
-     output it into a file `using with open('a')` named `undetermined_read1.fastq` and `undetermined_read2.fastq`
+     
+     output the entire record into a file `using with open('a')` named `undetermined_read1.fastq` and `undetermined_read2.fastq`
    
 
 8. High level functions. For each function, be sure to include:
