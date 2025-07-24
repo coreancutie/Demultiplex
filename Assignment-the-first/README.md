@@ -60,7 +60,8 @@ You should strive to report values for each possible pair of indexes (both swapp
 - Define the problem
 - Determine/describe what output would be informative
 - Write examples (unit tests!):
-    - Include four properly formatted input FASTQ files with read pairs that cover all three categories (dual matched, index-hopped, unknown index)
+    - INPUT FILES: R1 (biological read 1) R2 (index 1 -> i1) R3 (index 2 -> i2) R4 (biological R2)
+    - Include four properly formatted input FASTQ files with read pairs that cover all three categories (dual matched, index-hopped, unknown index) (the bare MINIMUM is 6 files, Read 1 and Read 2 for dual, hopped, and unknown)
     - Include the appropriate number of properly formatted output FASTQ files given your input files
 - Develop your algorithm using pseudocode
 - Determine high level functions
