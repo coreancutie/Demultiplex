@@ -52,13 +52,13 @@
 
    check the quality score of the barcodes by calling the phred_score function that I will make/call from bioinfo.py
    
-   - `if` the barcodes are below the quality score `<` (regardless of if they are hopped, matched, or not)
+    `if` the barcodes are below the quality score `<` (regardless of if they are hopped, matched, or not)
    
      combine the barcodes into one string
 
      append that to the end of each header
 
-     output it into a file named `undetermined_read1.fastq` and `undetermined_read2.fastq`
+     output it into a file `using with open('a')` named `undetermined_read1.fastq` and `undetermined_read2.fastq`
 
    *this code will run if the barcodes are not below the quality score threshold*
    
@@ -68,7 +68,7 @@
 
      append that to the end of each header
 
-     output it into a file named `barcode<x>_read1.fastq` and `barcode<x>_read2.fastq` where <x> is the number of the barcode
+     output it into a file `using with open('a')` named `barcode<x>_read1.fastq` and `barcode<x>_read2.fastq` where <x> is the number of the barcode
      
    - `if` the barcodes are different `=!` `and` part of the 24 barcodes
 
@@ -76,14 +76,14 @@
 
      append that to the end of each header
 
-     output it into a file named `hopped_read1.fastq` and `hopped_read2.fastq`
+     output it into a file `using with open('a')` named `hopped_read1.fastq` and `hopped_read2.fastq`
      
    - `if` the barcodes are not part of the 24 barcodes
      combine the barcodes into one string
 
      append that to the end of each header
 
-     output it into a file named `undetermined_read1.fastq` and `undetermined_read2.fastq`
+     output it into a file `using with open('a')` named `undetermined_read1.fastq` and `undetermined_read2.fastq`
    
 
 8. High level functions. For each function, be sure to include:
