@@ -34,6 +34,8 @@
 
 6. Pseudocode
 
+    
+
 7. High level functions. For each function, be sure to include:
     1. Description/doc string
     2. Function headers (name and parameters)
