@@ -53,8 +53,12 @@
    get the barcodes by checking it is line number 2 using `%` for `file 2` and `file 3` (the index files) and assign them to variables
    
    `barcode1 = __`
+
+   reverse complement `file 3` before assigning it the variable
+
+   `rev_com(__) -> _`
    
-   `barcode2 = __`
+   `barcode2 = _`
 
    check the quality score of the barcodes from line 4 using `%` and calling the phred_score function that I will make/call from bioinfo.py and storing them into variables
 
@@ -96,3 +100,21 @@
     2. Function headers (name and parameters)
     3. Test examples for individual functions
     4. Return statement
+
+Phred score function:
+  
+    def convert_phred(letter: str) -> int:
+        '''Takes a single ASCII character (string) encoded in Phred+33 and
+        returns the quality score value as an integer.'''
+        return qscore
+    Input: I
+    Expected output: 40
+       
+Reverse complement function
+
+    def rev_complement(barcode: str) -> str:
+        '''Takes in a sequence that is DNA (string) and returns the complment of it
+        as a string'''
+    Input: AATG
+    Expected output: TTAC
+
