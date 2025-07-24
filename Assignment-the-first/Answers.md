@@ -34,9 +34,19 @@
 
 6. Pseudocode
 
-    
+    argparse for 5 variables: 4 files and the quality score threshold
 
-7. High level functions. For each function, be sure to include:
+   open all 4 files `with open() as f1, open() as f2, open() as f3, open() as f4`
+   while true loop
+   read all 4 lines at once
+
+   if all four lines are false (empty newline) then break the loop
+
+   strip and split the line
+
+   
+
+8. High level functions. For each function, be sure to include:
     1. Description/doc string
     2. Function headers (name and parameters)
     3. Test examples for individual functions
