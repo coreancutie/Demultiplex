@@ -42,43 +42,31 @@
 
    read 4 lines at a time for each of the 4 files at once
 
+   put all 4 lines into lists so they have the format of `record1 = [<header>, <sequence>, <'+'>, <score>]`
+
    `if` all four lines are false (empty newline) `not l1 and not l1 ....` then break the loop
 
    *the rest of this code will run if the lines are not empty and we are still in the loop*
 
-   strip the line (to get rid of new line at the end)
+   call a `reverse complement function` on `record3[1]` and replacing it in the list
 
-   get the header by checking it is line number 1 using `%` and assigning it to a variable 
+   check the quality score of the barcodes by calling the `phred_score function` and storing them into variables
 
-   get the barcodes by checking it is line number 2 using `%` for `file 2` and `file 3` (the index files) and assign them to variables
+   `bar1qs = phred_score(record2[3])`
    
-   `barcode1 = __`
-
-   reverse complement `file 3` before assigning it the variable
-
-   `rev_com(__) -> _`
-   
-   `barcode2 = _`
-
-   check the quality score of the barcodes from line 4 using `%` and calling the phred_score function that I will make/call from bioinfo.py and storing them into variables
-
-   `bar1qs = phred_score()`
-   
-   `bar2qs = phred_score()`
+   `bar2qs = phred_score(record3[3])`
    
    combine the barcodes into one string
    
-   `barcode = barcode2 + '-' + barcode3`
+   `combinded_barcode = barcode2 + '-' + barcode3`
    
-   append the combined barcode to the end of each header
+    append the combined barcode to the end of each header and replace the original header in the list with this new header
 
-   `bar1head = l1 + barcode`
-   
-   `bar2head = l4 + barcode`
+   `record1[0] = original_header + combinded_barcode`
    
     `if` the `bar1qs` `or` `bar2qs` are below the quality score `<` `threshold` (regardless of if they are hopped, matched, or not)
 
-     output the entire record into a file `using with open('a')` named `undetermined_read1.fastq` and `undetermined_read2.fastq`
+   output the entire record into a file `using with open('a')` named `undetermined_read1.fastq` and `undetermined_read2.fastq`
 
    *this code will run if the barcodes are not below the quality score threshold*
    
