@@ -1,6 +1,6 @@
 # Demultiplexing and Index Swapping – Assignment the First
 
-**Goals**: Our goal is to look through a lane of sequencing generated from the 2017 BGMP cohort’s library preps and determine the level of index swapping and undetermined index-pairs, before and after quality filtering of index reads. In order to do this, we must first demultiplex the data. In Assignment the First, we will develop a strategy to de-multiplex samples to create 48 FASTQ files that contain acceptable index pairs (read1 and read2 for 24 different index pairs), two FASTQ files with index-hopped reads-pairs, and two FASTQ files undetermined (non-matching or low quality) index-pairs.
+**Goals**: Our goal is to look through a lane of sequencing generated from the 2017 BGMP cohort’s library preps and determine the level of index swapping and undetermined index-pairs, before and after quality filtering of index reads. In order to do this, we must first demultiplex the data. In Assignment the First, we will develop a strategy to de-multiplex samples to create **48 FASTQ files** that contain acceptable index pairs (read1 and read2 for 24 different index pairs), **two FASTQ files** with index-hopped reads-pairs, and **two FASTQ files** undetermined (non-matching or low quality) index-pairs. **Total of 52 fastq files!**
 
 De-multiplexing is necessary for downstream analyses.
 
