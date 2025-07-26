@@ -38,49 +38,49 @@
 
    open all 4 files `with open() as f1, open() as f2, open() as f3, open() as f4`
 
-   `while true` loop
+    - `while true` loop
 
-   read 4 lines at a time for each of the 4 files at once
+       - read 4 lines at a time for each of the 4 files at once
 
-   put all 4 lines into lists so they have the format of `record1 = [<header>, <sequence>, <'+'>, <score>]`
+       - put all 4 lines into lists so they have the format of `record1 = [<header>, <sequence>, <'+'>, <score>]`
 
-   `if` all four lines are false (empty newline) `not l1 and not l1 ....` then break the loop
+       - `if` all four lines are false (empty newline) then break the loop
 
-   *the rest of this code will run if the lines are not empty and we are still in the loop*
+       *the rest of this code will run if the lines are not empty and we are still in the loop `else`*
 
-   call a `reverse complement function` on `record3[1]` and replacing it in the list
+       - call a `reverse complement function` on `record3[1]` and replacing it in the list
 
-   check the quality score of the barcodes by calling the `phred_score function` and storing them into variables
+       - check the quality score of the barcodes by calling the `phred_score function` and storing them into variables
 
-   `bar1qs = phred_score(record2[3])`
+         `bar1qs = phred_score(record2[3])`
    
-   `bar2qs = phred_score(record3[3])`
+         `bar2qs = phred_score(record3[3])`
    
-   combine the barcodes into one string
+       - combine the barcodes into one string
    
-   `combinded_barcode = barcode2 + '-' + barcode3`
+           `combinded_barcode = barcode2 + '-' + barcode3`
    
-    append the combined barcode to the end of each header and replace the original header in the list with this new header
+        - append the combined barcode to the end of each header and replace the original header in the list with this new header
 
-   `record1[0] = original_header + combinded_barcode`
+           `record1[0] = original_header + combinded_barcode`
    
-    `if` the `bar1qs` `or` `bar2qs` are below the quality score `<` `threshold` (regardless of if they are hopped, matched, or not)
+        - `if` the `bar1qs` `or` `bar2qs` are below the quality score `<` `threshold` (regardless of if they are hopped, matched, or not)
 
-   output the entire record into a file `using with open('a')` named `undetermined_read1.fastq` and `undetermined_read2.fastq`
+           - output the entire record into a file `using with open('a')` named `undetermined_read1.fastq` and `undetermined_read2.fastq`
 
-   *this code will run if the barcodes are not below the quality score threshold*
+       *this code will run if the barcodes are not below the quality score threshold*
    
-   - `if` the barcodes are the same as each other `==` `and` part of the 24 barcodes
+       - `if` the barcodes are the same as each other `==` `and` part of the 24 barcodes
 
-     output the entire record into a file `using with open('a')` named `barcode<x>_read1.fastq` and `barcode<x>_read2.fastq` where <x> is the number of the barcode
+         - output the entire record into a file `using with open('a')` named `barcode<x>_read1.fastq` and `barcode<x>_read2.fastq` where <x> is the number of the barcode
      
-   - `if` the barcodes are different `=!` `and` part of the 24 barcodes
+       - `if` the barcodes are different `=!` `and` part of the 24 barcodes
 
-     output the entire record into a file `using with open('a')` named `hopped_read1.fastq` and `hopped_read2.fastq`
+         - output the entire record into a file `using with open('a')` named `hopped_read1.fastq` and `hopped_read2.fastq`
      
-   - `if` the barcodes are not part of the 24 barcodes
+       - `if` the barcodes are not part of the 24 barcodes
      
-     output the entire record into a file `using with open('a')` named `undetermined_read1.fastq` and `undetermined_read2.fastq`
+         - output the entire record into a file `using with open('a')` named `undetermined_read1.fastq` and `undetermined_read2.fastq`
    
 
 8. High level functions. For each function, be sure to include:
