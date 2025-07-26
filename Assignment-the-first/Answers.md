@@ -38,6 +38,10 @@
 
    open all 4 files `with open() as f1, open() as f2, open() as f3, open() as f4`
 
+   initalize 3 variables to count for known, unknown, and hopped records
+   
+   initalize an empty dictionary to count all the times certain barcodes hopped
+
     - `while true` loop
 
        - read 4 lines at a time for each of the 4 files at once
@@ -67,20 +71,24 @@
         - `if` the `bar1qs` `or` `bar2qs` are below the quality score `<` `threshold` (regardless of if they are hopped, matched, or not)
 
            - output the entire record into a file `using with open('a')` named `undetermined_read1.fastq` and `undetermined_read2.fastq`
+           - increment the unknown barcode counter
 
        *this code will run if the barcodes are not below the quality score threshold*
    
        - `if` the barcodes are the same as each other `==` `and` part of the 24 barcodes
 
          - output the entire record into a file `using with open('a')` named `barcode<x>_read1.fastq` and `barcode<x>_read2.fastq` where <x> is the number of the barcode
+         - increment the known barcode counter
      
        - `if` the barcodes are different `=!` `and` part of the 24 barcodes
 
          - output the entire record into a file `using with open('a')` named `hopped_read1.fastq` and `hopped_read2.fastq`
+         - increment the hopped counter
      
        - `if` the barcodes are not part of the 24 barcodes
      
          - output the entire record into a file `using with open('a')` named `undetermined_read1.fastq` and `undetermined_read2.fastq`
+         - increment the unknown counter
    
 
 8. High level functions. For each function, be sure to include:
