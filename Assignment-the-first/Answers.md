@@ -12,8 +12,10 @@
 
 2. Per-base NT distribution
     1. Use markdown to insert your 4 histograms here.
-    2. **YOUR ANSWER HERE**
-    3. **YOUR ANSWER HERE**
+    ![R1 Averages](./1294_S1_L008_R1_001.png)
+    ![R2 Averages](./1294_S1_L008_R2_001.png)
+    ![R3 Averages](./1294_S1_L008_R3_001.png)
+    ![R4 Averages](./1294_S1_L008_R4_001.png)
     
 ## Part 2
 1. Define the problem
