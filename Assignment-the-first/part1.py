@@ -86,7 +86,7 @@ plt.plot(my_list, 'o', color="pink")
 #adding lables
 plt.xlabel("Base Position")
 plt.ylabel("Mean Quality Score")
-plt.title(f"Plot of Mean Quality Score of {f[14:16]} FASTQ file for Each Base Position in a Sequence")
+plt.title(f"Plot of Mean Quality Score of {f[-15:-13]} FASTQ file for Each Base Position in a Sequence")
 
 #saving the figure
 #for the test use f[:-3]

@@ -19,4 +19,4 @@ mamba activate bgmp_demultiplex
 
 # /usr/bin/time ./part1.py -f "/projects/bgmp/shared/2017_sequencing/1294_S1_L008_R3_001.fastq.gz" -l 8
 
-/usr/bin/time ./part1.py -f "/projects/bgmp/shared/2017_sequencing/1294_S1_L008_R4_001.fastq.gz" -l 101
+# /usr/bin/time ./part1.py -f "/projects/bgmp/shared/2017_sequencing/1294_S1_L008_R4_001.fastq.gz" -l 101
